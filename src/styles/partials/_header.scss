@@ -1,0 +1,15 @@
+header {
+    display: flex;
+    padding: 0 10px;
+    nav {
+        margin: auto 0;
+        margin-left: auto;
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
