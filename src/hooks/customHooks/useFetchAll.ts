@@ -21,7 +21,7 @@ const useFetchAll = <T>(urls: string[]): FetchBatchResult<T> => {
         async function fetchData() {
             const fetchPromises = urls.map(async (url) => {
                 try {
-                    const response = await fetch(url);
+                    const response = await fetch(url, { mode: "cors" });
                     const json = await response.json();
                     const result: FetchResult<T> = {
                         data: json,

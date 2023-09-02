@@ -14,7 +14,7 @@ const useFetch = <T>(url: string): FetchResult<T> => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch(url);
+                const response = await fetch(url, { mode: "cors" });
                 const json = await response.json();
                 setData(json);
             } catch (error) {
