@@ -15,8 +15,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
                 <h3>{item.title}</h3>
             </Link>
             <p>${item.price}</p>
-            {/* <p>{item.description}</p> */}
-            {/* <p>{item.category}</p> */}
+
             <div className="rating-container">
                 <span>{item.rating.count}</span>
                 <span>{item.rating.rate}</span>
