@@ -1,8 +1,10 @@
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import useFetchAll from "../hooks/useFetchAll";
+import useLocalStorage from "../hooks/useLocalStorage";
 import { Item } from "../types/Item";
 import CardContainer from "../components/container/CardContainer";
 import categorizeItemsByCategory from "../utils/categorizeItemsByCategory";
+import { CategorizedItems } from "../types/CategorizedItems";
 
 const Products = () => {
     const baseUrl = "https://fakestoreapi.com/products/category/";
@@ -22,12 +24,26 @@ const Products = () => {
 
     const items = results.flatMap((result) => result.data) as Item[];
     const categorizedItems = categorizeItemsByCategory(items);
-    console.log(categorizedItems);
+
+    const [cachedCategorizedItems, setCachedCategorizedItems] =
+        useLocalStorage<CategorizedItems>("products", categorizedItems);
+
+    useEffect(() => {
+        if (
+            Object.keys(categorizedItems).length > 0 &&
+            JSON.stringify(cachedCategorizedItems) !==
+                JSON.stringify(categorizedItems)
+        ) {
+            setCachedCategorizedItems(categorizedItems);
+        }
+    }, [categorizedItems, cachedCategorizedItems, setCachedCategorizedItems]);
+
+    if (!loadingBatch && errorBatch) console.log(errorBatch);
 
     return (
         <>
             <h1>Products</h1>
-            {!loadingBatch && !errorBatch && <CardContainer items={items} />}
+            {<CardContainer categorizedItems={cachedCategorizedItems} />}
         </>
     );
 };

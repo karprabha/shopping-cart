@@ -1,9 +1,10 @@
 import { Item } from "../types/Item";
-
-type CategorizedItems = Record<string, Item[]>;
+import { CategorizedItems } from "../types/CategorizedItems";
 
 const categorizeItemsByCategory = (items: Item[]) => {
-    const categorizedItems: CategorizedItems = {};
+    const categorizedItems: CategorizedItems = {
+        all: [],
+    };
 
     items.forEach((item) => {
         const { category } = item;
@@ -13,6 +14,7 @@ const categorizeItemsByCategory = (items: Item[]) => {
         }
 
         categorizedItems[category].push(item);
+        categorizedItems.all.push(item);
     });
 
     return categorizedItems;

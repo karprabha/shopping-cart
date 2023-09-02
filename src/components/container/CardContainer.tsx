@@ -1,16 +1,17 @@
-import { Item } from "../../types/Item";
+import { CategorizedItems } from "../../types/CategorizedItems";
 import Card from "../card/Card";
 
 interface CardContainerProps {
-    items: Item[];
+    categorizedItems: CategorizedItems;
 }
 
-const CardContainer: React.FC<CardContainerProps> = ({ items }) => {
+const CardContainer: React.FC<CardContainerProps> = ({ categorizedItems }) => {
     return (
         <div className="card-container">
-            {items.map((item) => (
-                <Card key={item.id} item={item} />
-            ))}
+            {categorizedItems["all"] &&
+                categorizedItems["all"].map((item) => (
+                    <Card key={item.id} item={item} />
+                ))}
         </div>
     );
 };
