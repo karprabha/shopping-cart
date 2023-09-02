@@ -18,6 +18,8 @@ const Card: React.FC<CardProps> = ({ item }) => {
                 <span>{item.rating.count}</span>
                 <span>{item.rating.rate}</span>
             </div>
+
+            <button type="button">Add to Cart</button>
         </div>
     );
 };
