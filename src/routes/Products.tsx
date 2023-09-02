@@ -1,9 +1,8 @@
 import { useMemo, useEffect } from "react";
-import useFetchAll from "../hooks/useFetchAll";
-import useLocalStorage from "../hooks/useLocalStorage";
-import { Item } from "../types/Item";
+import { useFetchAll, useLocalStorage } from "../hooks/customHooks";
 import CardContainer from "../components/container/CardContainer";
 import categorizeItemsByCategory from "../utils/categorizeItemsByCategory";
+import { Item } from "../types/Item";
 import { CategorizedItems } from "../types/CategorizedItems";
 
 const Products = () => {
@@ -30,7 +29,7 @@ const Products = () => {
 
     useEffect(() => {
         if (
-            Object.keys(categorizedItems).length > 0 &&
+            categorizedItems.all.length > 0 &&
             JSON.stringify(cachedCategorizedItems) !==
                 JSON.stringify(categorizedItems)
         ) {
