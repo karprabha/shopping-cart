@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Item } from "../../types/Item";
 
 interface CardProps {
@@ -10,7 +11,9 @@ const Card: React.FC<CardProps> = ({ item }) => {
             <div className="img-container">
                 <img src={item.image} alt={item.title} />
             </div>
-            <h3>{item.title}</h3>
+            <Link to={`/products/${item.id}`}>
+                <h3>{item.title}</h3>
+            </Link>
             <p>${item.price}</p>
             {/* <p>{item.description}</p> */}
             {/* <p>{item.category}</p> */}
