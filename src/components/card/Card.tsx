@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Item } from "../../types/Item";
+import AddToCartButton from "../button/AddToCartButton";
 
 interface CardProps {
     item: Item;
@@ -21,7 +22,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
                 <span>{item.rating.rate}</span>
             </div>
 
-            <button type="button">Add to Cart</button>
+            <AddToCartButton key={item.id} itemId={item.id} />
         </div>
     );
 };

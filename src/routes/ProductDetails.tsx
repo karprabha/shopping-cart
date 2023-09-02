@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Item } from "../types/Item";
+import AddToCartButton from "../components/button/AddToCartButton";
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -32,9 +33,8 @@ const ProductDetails = () => {
                     <span>Rating: {product.rating.rate}</span>
                     <span>({product.rating.count} reviews)</span>
                 </div>
-                <button className="product-details-button" type="button">
-                    Add to Cart
-                </button>
+
+                <AddToCartButton key={product.id} itemId={product.id} />
             </div>
         </div>
     );
