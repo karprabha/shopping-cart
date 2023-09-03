@@ -1,0 +1,22 @@
+.cart-item {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    height: 110px;
+    .img-container {
+        height: 100%;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+        }
+    }
+
+    .item-detail {
+        .item-btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+}

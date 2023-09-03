@@ -17,12 +17,17 @@ const App = () => {
     }, [cartItems, setCachedCartItems]);
 
     const updateCartItems = (itemId: number, quantity: number) => {
-        setCartItems({
-            ...cartItems,
-            [itemId]: {
-                quantity: quantity,
-            },
-        });
+        const updatedCartItems = { ...cartItems };
+
+        updatedCartItems[itemId] = {
+            quantity: quantity,
+        };
+
+        if (quantity === 0) {
+            delete updatedCartItems[itemId];
+        }
+
+        setCartItems(updatedCartItems);
     };
 
     return (

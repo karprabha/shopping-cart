@@ -1,6 +1,6 @@
 import { CategorizedItems } from "../../types/CategorizedItems";
 import Card from "../card/Card";
-import SkeletonCard from "../card/SkeletonCard";
+import SkeletonCard from "../skeleton/SkeletonCard";
 
 interface CardContainerProps {
     categorizedItems: CategorizedItems;
