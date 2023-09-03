@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ShopContext from "../context/ShopContext";
 import { Item } from "../types/Item";
 import CartItemContainer from "../components/container/CartItemContainer";
+import OrderSummary from "../components/container/OrderSummaryContainer";
 
 const Cart = () => {
     const { cartItems } = useContext(ShopContext);
@@ -20,7 +21,10 @@ const Cart = () => {
     return (
         <>
             <h1>Cart</h1>
-            <CartItemContainer items={matchingItems} />
+            <div className="cart-container">
+                <CartItemContainer items={matchingItems} />
+                <OrderSummary />
+            </div>
         </>
     );
 };
