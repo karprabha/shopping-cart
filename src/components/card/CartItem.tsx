@@ -20,7 +20,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
                 <Link to={`/products/${item.id}`}>
                     <h3>{item.title}</h3>
                 </Link>
-                <p>${item.totalProductPrice}</p>
+                <p>${item.totalProductPrice?.toFixed(2)}</p>
 
                 <div className="item-btn-container">
                     <AddToCartButton key={item.id} itemId={item.id} />

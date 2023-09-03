@@ -54,9 +54,11 @@ const Cart = () => {
                 </>
             ) : (
                 <>
-                    <p>Total Items: {totalItemCount}</p>
                     <div className="cart-container">
-                        <CartItemContainer items={cartItemsInCart} />
+                        <CartItemContainer
+                            totalItemCount={totalItemCount}
+                            items={cartItemsInCart}
+                        />
                         <OrderSummary estimatedTotalCost={estimatedTotalCost} />
                     </div>
                 </>

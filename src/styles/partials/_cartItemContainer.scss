@@ -7,5 +7,18 @@
     min-width: 340px;
     max-height: 70vh;
 
-    overflow: auto;
+    .cart-info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .cart-items {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        overflow: auto;
+        padding: 5px;
+    }
 }
