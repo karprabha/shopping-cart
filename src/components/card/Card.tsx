@@ -9,10 +9,10 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ item }) => {
     return (
         <div className="card">
-            <div className="img-container">
-                <img src={item.image} alt={item.title} />
-            </div>
             <Link to={`/products/${item.id}`}>
+                <div className="img-container">
+                    <img src={item.image} alt={item.title} />
+                </div>
                 <h3>{item.title}</h3>
             </Link>
             <p>${item.price}</p>
