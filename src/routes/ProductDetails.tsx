@@ -24,15 +24,15 @@ const ProductDetails = () => {
             </div>
             <div className="product-details-info">
                 <h1>{product.title}</h1>
+                <div className="product-details-rating">
+                    <span>Rating: {product.rating.rate}</span>
+                    <span>({product.rating.count} reviews)</span>
+                </div>
                 <p className="product-details-price">${product.price}</p>
                 <div className="product-details-description">
                     <p>{product.description}</p>
                 </div>
                 <p className="product-details-category">{product.category}</p>
-                <div className="product-details-rating">
-                    <span>Rating: {product.rating.rate}</span>
-                    <span>({product.rating.count} reviews)</span>
-                </div>
 
                 <AddToCartButton key={product.id} itemId={product.id} />
             </div>
