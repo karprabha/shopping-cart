@@ -18,8 +18,8 @@ const Card: React.FC<CardProps> = ({ item }) => {
             <p>${item.price}</p>
 
             <div className="rating-container">
-                <span>{item.rating.count}</span>
-                <span>{item.rating.rate}</span>
+                <span>{item.rating.rate}☆</span>
+                <span>({item.rating.count})</span>
             </div>
 
             <AddToCartButton key={item.id} itemId={item.id} />
