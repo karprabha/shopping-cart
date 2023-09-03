@@ -6,6 +6,7 @@ import Contact from "./routes/Contact.tsx";
 import Cart from "./routes/Cart.tsx";
 import ErrorPage from "./routes/ErrorPage.tsx";
 import ProductDetails from "./routes/ProductDetails.tsx";
+import Checkout from "./routes/Checkout.tsx";
 
 const Router = () => {
     const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const Router = () => {
                     element: <ProductDetails />,
                 },
             ],
+        },
+        {
+            path: "/checkout",
+            element: <Checkout />,
         },
     ]);
 
