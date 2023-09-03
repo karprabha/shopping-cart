@@ -7,23 +7,46 @@ import OrderSummary from "../components/container/OrderSummaryContainer";
 const Cart = () => {
     const { cartItems } = useContext(ShopContext);
 
-    const allCategoryString = localStorage.getItem("products");
-    const allCategory = allCategoryString
-        ? JSON.parse(allCategoryString).all || []
+    const allProductsString = localStorage.getItem("products");
+    const allProducts = allProductsString
+        ? JSON.parse(allProductsString).all || []
         : [];
     const cartItemIds = Object.keys(cartItems);
 
-    const matchingItems = allCategory.filter((item: Item) =>
-        cartItemIds.includes(String(item.id))
+    const cartItemsInCart = allProducts
+        .filter((product: Item) => cartItemIds.includes(String(product.id)))
+        .map((product: Item) => {
+            const itemId = product.id;
+            const cartItem = cartItems[itemId];
+            const productPrice = product.price;
+            const productQuantity = cartItem ? cartItem.quantity : 0;
+            const totalProductPrice = productPrice * productQuantity;
+
+            return {
+                ...product,
+                totalProductPrice,
+            };
+        });
+
+    const totalItemCount = cartItemIds.reduce(
+        (totalCount, itemId) =>
+            totalCount + cartItems[parseInt(itemId)].quantity,
+        0
     );
-    console.log(matchingItems);
+
+    const estimatedTotalCost = cartItemsInCart.reduce(
+        (totalCost: number, product: Item) =>
+            totalCost + (product.totalProductPrice ?? 0),
+        0
+    );
 
     return (
         <>
             <h1>Cart</h1>
+            <p>Total Items: {totalItemCount}</p>
             <div className="cart-container">
-                <CartItemContainer items={matchingItems} />
-                <OrderSummary />
+                <CartItemContainer items={cartItemsInCart} />
+                <OrderSummary estimatedTotalCost={estimatedTotalCost} />
             </div>
         </>
     );

@@ -6,6 +6,7 @@ export interface Item {
     category: string;
     image: string;
     rating: Rating;
+    totalProductPrice?: number;
 }
 
 export interface Rating {
