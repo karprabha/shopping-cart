@@ -1,60 +1,25 @@
-import { useState, useEffect } from "react";
-import { useLocalStorage } from "../../hooks/customHooks";
-
-interface CartItem {
-    quantity: number;
-}
+import { useContext } from "react";
+import ShopContext from "../../context/ShopContext";
 
 interface AddToCartButtonProps {
     itemId: number;
 }
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({ itemId }) => {
-    const [quantity, setQuantity] = useState(0);
-    const [cartItems, setCartItems] = useLocalStorage<{
-        [key: string]: CartItem;
-    }>("cartItems", {});
-
-    useEffect(() => {
-        if (cartItems[itemId] && cartItems[itemId].quantity) {
-            setQuantity(cartItems[itemId].quantity);
-        }
-    }, [itemId, cartItems]);
+    const { cartItems, updateCartItems } = useContext(ShopContext);
+    const quantity = cartItems[itemId] ? cartItems[itemId].quantity : 0;
 
     const handleAddToCart = () => {
-        setQuantity(1);
-
-        if (itemId) console.log(itemId);
-
-        setCartItems({
-            ...cartItems,
-            [itemId]: {
-                quantity: 1,
-            },
-        });
+        updateCartItems(itemId, 1);
     };
 
     const handleIncreaseQuantity = () => {
-        setQuantity(quantity + 1);
-
-        setCartItems({
-            ...cartItems,
-            [itemId]: {
-                quantity: quantity + 1,
-            },
-        });
+        updateCartItems(itemId, quantity + 1);
     };
 
     const handleDecreaseQuantity = () => {
         if (quantity > 0) {
-            setQuantity(quantity - 1);
-
-            setCartItems({
-                ...cartItems,
-                [itemId]: {
-                    quantity: quantity - 1,
-                },
-            });
+            updateCartItems(itemId, quantity - 1);
         }
     };
 

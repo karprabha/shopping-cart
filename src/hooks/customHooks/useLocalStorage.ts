@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 type SetValue<T> = T | ((value: T) => T);
 
@@ -15,21 +15,6 @@ const useLocalStorage = <T>(
             return initialValue;
         }
     });
-
-    useEffect(() => {
-        const handleStorageChange = (e: StorageEvent) => {
-            if (e.key === key) {
-                setStoredValue(
-                    e.newValue ? JSON.parse(e.newValue) : initialValue
-                );
-            }
-        };
-        window.addEventListener("storage", handleStorageChange);
-
-        return () => {
-            window.removeEventListener("storage", handleStorageChange);
-        };
-    }, [key, initialValue]);
 
     const setValue = (value: SetValue<T>) => {
         try {
