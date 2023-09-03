@@ -10,9 +10,11 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
     return (
         <div className="cart-item">
-            <div className="img-container">
-                <img src={item.image} alt={item.title} />
-            </div>
+            <Link to={`/products/${item.id}`}>
+                <div className="img-container">
+                    <img src={item.image} alt={item.title} />
+                </div>
+            </Link>
 
             <div className="item-detail">
                 <Link to={`/products/${item.id}`}>
