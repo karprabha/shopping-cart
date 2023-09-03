@@ -16,6 +16,11 @@ const App = () => {
         setCachedCartItems(cartItems);
     }, [cartItems, setCachedCartItems]);
 
+    const clearCart = () => {
+        setCachedCartItems({});
+        setCartItems({});
+    };
+
     const updateCartItems = (itemId: number, quantity: number) => {
         const updatedCartItems = { ...cartItems };
 
@@ -31,7 +36,7 @@ const App = () => {
     };
 
     return (
-        <ShopContext.Provider value={{ cartItems, updateCartItems }}>
+        <ShopContext.Provider value={{ cartItems, updateCartItems, clearCart }}>
             <header>
                 <h1>CraftHaven</h1>
                 <Navbar />
