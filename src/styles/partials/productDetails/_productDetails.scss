@@ -18,11 +18,20 @@
         min-width: 300px;
         margin: 0 auto;
         text-align: center;
+        position: relative;
         img {
             max-width: 100%;
             max-height: 100%;
             margin: auto;
             object-fit: cover;
+        }
+
+        .best-seller-label {
+            top: 4%;
+            left: 4%;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 3px 5px;
         }
     }
 

@@ -9,6 +9,10 @@
     // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     // transition: transform 0.2s ease;
 
+    .item-title {
+        font-weight: bold;
+    }
+
     span {
         font-size: 16px;
     }
@@ -32,9 +36,14 @@
         margin-bottom: 10px;
         overflow: hidden;
         border-radius: 10px;
+        position: relative;
         img {
             max-width: 100%;
             max-height: 100%;
+        }
+
+        .best-seller-label {
+            font-size: 12px;
         }
     }
 

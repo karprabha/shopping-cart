@@ -4,6 +4,7 @@ import AddToCartButton from "../components/button/AddToCartButton";
 import capitalizeEachWord from "../utils/capitalizeEachWord";
 import trimString from "../utils/trimString";
 import Rating from "../components/label/Rating";
+import BestSellerLabel from "../components/label/BestSeller";
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -36,6 +37,7 @@ const ProductDetails = () => {
             </div>
             <div className="product-details">
                 <div className="product-details-image">
+                    <BestSellerLabel rating={product.rating} />
                     <img src={product.image} alt={product.title} />
                 </div>
                 <div className="product-details-info">
