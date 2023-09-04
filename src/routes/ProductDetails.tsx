@@ -5,6 +5,7 @@ import capitalizeEachWord from "../utils/capitalizeEachWord";
 import trimString from "../utils/trimString";
 import Rating from "../components/label/Rating";
 import BestSellerLabel from "../components/label/BestSeller";
+import ProductNotFound from "../pages/ProductNotFound";
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -18,7 +19,7 @@ const ProductDetails = () => {
     );
 
     if (!product) {
-        return <div>Product not found</div>;
+        return <ProductNotFound />;
     }
 
     return (
