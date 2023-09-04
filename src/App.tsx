@@ -4,6 +4,7 @@ import PageContainer from "./layouts/PageContainer";
 import ShopContext from "./context/ShopContext";
 import { CartItems } from "./types/CartItems";
 import { useLocalStorage } from "./hooks/customHooks";
+import { Link } from "react-router-dom";
 
 const App = () => {
     const [cachedCartItems, setCachedCartItems] = useLocalStorage(
@@ -38,7 +39,9 @@ const App = () => {
     return (
         <ShopContext.Provider value={{ cartItems, updateCartItems, clearCart }}>
             <header>
-                <h1>CraftHaven</h1>
+                <h1>
+                    <Link to={"/"}>CraftHaven</Link>
+                </h1>
                 <Navbar />
             </header>
 
