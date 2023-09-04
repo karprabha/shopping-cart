@@ -23,19 +23,27 @@ const CardContainer: React.FC<CardContainerProps> = ({ categorizedItems }) => {
 
     return (
         <>
-            <Link to={"/"}>Home</Link>
-            <span> &gt; Products &gt; </span>
-            <select
-                name="select-category"
-                id="select-category-dropdown"
-                value={selectedCategory}
-                onChange={handleCategoryChange}
-            >
-                <option value="all">All</option>
-                <option value="jewelery">Jewelery</option>
-                <option value="men's clothing">Men's Clothing</option>
-                <option value="women's clothing">Women's Clothing</option>
-            </select>
+            <div className="breadcrumb-navigation">
+                <Link to={"/"} className="breadcrumb-link">
+                    Home
+                </Link>
+                <span className="breadcrumb-separator">
+                    {" "}
+                    &gt; Products &gt;{" "}
+                </span>
+                <select
+                    name="select-category"
+                    id="select-category-dropdown"
+                    value={selectedCategory}
+                    onChange={handleCategoryChange}
+                    className="category-dropdown"
+                >
+                    <option value="all">All</option>
+                    <option value="jewelery">Jewelery</option>
+                    <option value="men's clothing">Men's Clothing</option>
+                    <option value="women's clothing">Women's Clothing</option>
+                </select>
+            </div>
 
             <div className="card-container">
                 {categorizedItems[selectedCategory].length > 0

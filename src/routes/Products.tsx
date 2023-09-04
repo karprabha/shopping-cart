@@ -39,12 +39,7 @@ const Products = () => {
 
     if (!loadingBatch && errorBatch) console.log(errorBatch);
 
-    return (
-        <>
-            <h1>Products</h1>
-            {<CardContainer categorizedItems={cachedCategorizedItems} />}
-        </>
-    );
+    return <>{<CardContainer categorizedItems={cachedCategorizedItems} />}</>;
 };
 
 export default Products;
