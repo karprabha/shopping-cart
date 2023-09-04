@@ -3,7 +3,7 @@ import ShopContext from "../context/ShopContext";
 import { Item } from "../types/Item";
 import CartItemContainer from "../components/container/CartItemContainer";
 import OrderSummary from "../components/container/OrderSummaryContainer";
-import { Link } from "react-router-dom";
+import EmptyCartContainer from "../components/container/EmptyCartContainer";
 
 const Cart = () => {
     const { cartItems } = useContext(ShopContext);
@@ -44,13 +44,7 @@ const Cart = () => {
     return (
         <div className="cart">
             {totalItemCount === 0 ? (
-                <div className="empty-cart-container">
-                    <h1>Your cart is empty!</h1>
-                    <p>Add items to it now.</p>
-                    <button type="button">
-                        <Link to={"/products"}>Shop Now</Link>
-                    </button>
-                </div>
+                <EmptyCartContainer />
             ) : (
                 <div className="cart-container">
                     <CartItemContainer
