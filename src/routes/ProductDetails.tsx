@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Item } from "../types/Item";
 import AddToCartButton from "../components/button/AddToCartButton";
+import capitalizeEachWord from "../utils/capitalizeEachWord";
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -23,16 +24,21 @@ const ProductDetails = () => {
                 <img src={product.image} alt={product.title} />
             </div>
             <div className="product-details-info">
-                <h1>{product.title}</h1>
+                <h3>{product.title}</h3>
+
                 <div className="product-details-rating">
-                    <span>Rating: {product.rating.rate}</span>
+                    <span>{product.rating.rate}☆ Rating,</span>
                     <span>({product.rating.count} reviews)</span>
                 </div>
-                <p className="product-details-price">${product.price}</p>
+
+                <span className="product-details-price">${product.price}</span>
+
                 <div className="product-details-description">
                     <p>{product.description}</p>
                 </div>
-                <p className="product-details-category">{product.category}</p>
+                <span className="product-details-category">
+                    {capitalizeEachWord(product.category)}
+                </span>
 
                 <AddToCartButton key={product.id} itemId={product.id} />
             </div>
