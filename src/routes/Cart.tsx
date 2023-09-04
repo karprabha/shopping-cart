@@ -45,23 +45,21 @@ const Cart = () => {
         <div className="cart">
             <h1>Cart</h1>
             {totalItemCount === 0 ? (
-                <>
+                <div className="empty-cart-container">
                     <h1>Your cart is empty!</h1>
                     <p>Add items to it now.</p>
                     <button type="button">
                         <Link to={"/products"}>Shop Now</Link>
                     </button>
-                </>
+                </div>
             ) : (
-                <>
-                    <div className="cart-container">
-                        <CartItemContainer
-                            totalItemCount={totalItemCount}
-                            items={cartItemsInCart}
-                        />
-                        <OrderSummary estimatedTotalCost={estimatedTotalCost} />
-                    </div>
-                </>
+                <div className="cart-container">
+                    <CartItemContainer
+                        totalItemCount={totalItemCount}
+                        items={cartItemsInCart}
+                    />
+                    <OrderSummary estimatedTotalCost={estimatedTotalCost} />
+                </div>
             )}
         </div>
     );
