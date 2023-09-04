@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import Home from "./routes/Home.tsx";
 import Products from "./routes/Products.tsx";
-import Contact from "./routes/Contact.tsx";
 import Cart from "./routes/Cart.tsx";
 import ErrorPage from "./routes/ErrorPage.tsx";
 import ProductDetails from "./routes/ProductDetails.tsx";
@@ -19,10 +18,6 @@ const Router = () => {
                 {
                     path: "/products",
                     element: <Products />,
-                },
-                {
-                    path: "/contact",
-                    element: <Contact />,
                 },
                 {
                     path: "/cart",
