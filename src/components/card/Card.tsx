@@ -13,14 +13,15 @@ const Card: React.FC<CardProps> = ({ item }) => {
                 <div className="img-container">
                     <img src={item.image} alt={item.title} />
                 </div>
-                <h3>{item.title}</h3>
+                <span>{item.title}</span>
             </Link>
-            <p>${item.price}</p>
 
             <div className="rating-container">
                 <span>{item.rating.rate}☆</span>
                 <span>({item.rating.count})</span>
             </div>
+
+            <span className="item-price">${item.price}</span>
 
             <AddToCartButton key={item.id} itemId={item.id} />
         </div>
