@@ -6,7 +6,7 @@
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     // transition: transform 0.2s ease;
 
     span {
@@ -20,7 +20,7 @@
 
     .item-price {
         font-size: 16px;
-        color: #e74c3c;
+        // color: #e74c3c;
     }
 
     .img-container {
@@ -46,10 +46,15 @@
         justify-content: center;
         align-items: center;
         font-size: 16px;
-        color: #f39c12;
+        // color: #f39c12;
+        color: #808080;
     }
 
-    // &:hover {
-    //     transform: translateY(-5px);
-    // }
+    &:hover {
+        a {
+            color: #2980b9;
+        }
+        // transform: translateY(-5px);
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    }
 }
