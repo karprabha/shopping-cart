@@ -1,4 +1,5 @@
 import { useRouteError, Link } from "react-router-dom";
+import errorImgURL from "../assets/images/error.png";
 
 interface RouteError {
     statusText?: string;
@@ -11,6 +12,8 @@ const ErrorPage = () => {
 
     return (
         <div id="error-page">
+            <img src={errorImgURL} alt="error" />
+
             <h1>Oops!</h1>
             <p>Sorry, an unexpected error has occurred.</p>
             <p>

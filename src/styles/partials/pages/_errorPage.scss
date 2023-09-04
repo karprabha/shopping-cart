@@ -1,0 +1,45 @@
+#error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    text-align: center;
+
+    img {
+        width: 25vh;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p {
+        font-size: 16px;
+        color: #666;
+        margin: 10px 0;
+    }
+
+    i {
+        font-style: italic;
+        color: #e74c3c;
+    }
+
+    button {
+        background-color: #2980b9;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #1d5a88;
+        }
+    }
+}
