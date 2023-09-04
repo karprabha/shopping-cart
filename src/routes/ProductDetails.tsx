@@ -6,6 +6,7 @@ import trimString from "../utils/trimString";
 import Rating from "../components/label/Rating";
 import BestSellerLabel from "../components/label/BestSeller";
 import ProductNotFound from "../pages/ProductNotFound";
+import Slider from "../components/slider/Slider";
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -21,6 +22,14 @@ const ProductDetails = () => {
     if (!product) {
         return <ProductNotFound />;
     }
+
+    const currentProductCategory = product.category;
+
+    const relatedItems = allCategory.filter(
+        (item: Item) =>
+            item.category === currentProductCategory &&
+            String(item.id) !== productId
+    );
 
     return (
         <>
@@ -63,6 +72,8 @@ const ProductDetails = () => {
                     <AddToCartButton key={product.id} itemId={product.id} />
                 </div>
             </div>
+
+            <Slider slides={relatedItems} />
         </>
     );
 };
