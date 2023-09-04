@@ -33,8 +33,8 @@ const CardContainer: React.FC<CardContainerProps> = ({ categorizedItems }) => {
             >
                 <option value="all">All</option>
                 <option value="jewelery">Jewelery</option>
-                <option value="women's clothing">Women's Clothing</option>
                 <option value="men's clothing">Men's Clothing</option>
+                <option value="women's clothing">Women's Clothing</option>
             </select>
 
             <div className="card-container">
