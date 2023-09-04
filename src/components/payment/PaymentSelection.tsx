@@ -15,17 +15,6 @@ const PaymentSelection = () => {
             <div className="payment-method">
                 <input
                     type="radio"
-                    id="cash"
-                    name="payment-method"
-                    value="cash"
-                    checked={selectedPayment === "cash"}
-                    onChange={handlePaymentChange}
-                />
-                <label htmlFor="cash">Cash 💵 </label>
-            </div>
-            <div className="payment-method">
-                <input
-                    type="radio"
                     id="credit-card"
                     name="payment-method"
                     value="credit-card"
@@ -44,6 +33,17 @@ const PaymentSelection = () => {
                     onChange={handlePaymentChange}
                 />
                 <label htmlFor="bank-transfer">Bank Transfer 🏦</label>
+            </div>
+            <div className="payment-method">
+                <input
+                    type="radio"
+                    id="cash-on-delivery"
+                    name="payment-method"
+                    value="cash-on-delivery"
+                    checked={selectedPayment === "cash-on-delivery"}
+                    onChange={handlePaymentChange}
+                />
+                <label htmlFor="cash-on-delivery">Cash on Delivery 💵 </label>
             </div>
         </div>
     );
