@@ -3,6 +3,7 @@ import { Item } from "../types/Item";
 import AddToCartButton from "../components/button/AddToCartButton";
 import capitalizeEachWord from "../utils/capitalizeEachWord";
 import trimString from "../utils/trimString";
+import Rating from "../components/label/Rating";
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -41,8 +42,8 @@ const ProductDetails = () => {
                     <h3>{product.title}</h3>
 
                     <div className="product-details-rating">
-                        <span>{product.rating.rate}☆ Rating,</span>
-                        <span>({product.rating.count} reviews)</span>
+                        <Rating rating={product.rating.rate} />
+                        <span>Rating, ({product.rating.count} reviews)</span>
                     </div>
 
                     <span className="product-details-price">

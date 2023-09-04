@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Item } from "../../types/Item";
 import AddToCartButton from "../button/AddToCartButton";
+import Rating from "../label/Rating";
 
 interface CardProps {
     item: Item;
@@ -17,7 +18,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
             </Link>
 
             <div className="rating-container">
-                <span>{item.rating.rate}☆</span>
+                <Rating rating={item.rating.rate} />
                 <span>({item.rating.count})</span>
             </div>
 

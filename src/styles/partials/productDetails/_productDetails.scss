@@ -36,19 +36,23 @@
         }
 
         .product-details-rating {
+            display: flex;
             font-size: 16px;
             // color: #f39c12;
             color: #808080;
             span {
                 margin-right: 10px;
             }
-
+            .rating {
+                font-size: 12px;
+                align-self: flex-end;
+            }
             margin-bottom: 10px;
         }
 
         .product-details-price {
             font-size: 18px;
-            color: #e74c3c;
+            // color: #e74c3c;
         }
 
         .product-details-description {
