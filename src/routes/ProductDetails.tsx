@@ -73,7 +73,10 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-            <Slider slides={relatedItems} />
+            <div className="related-items">
+                <h3>You might be interested in</h3>
+                <Slider slides={relatedItems} />
+            </div>
         </>
     );
 };
