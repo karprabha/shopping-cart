@@ -1,14 +1,21 @@
 header {
-    background-color: #1a1a1a; /* Dark background color */
+    background-color: #1a1a1a;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+
     h1 {
         font-size: 24px;
         margin: 0;
-        color: #fff; /* White text color */
+        color: #fff;
     }
 
     nav {
@@ -21,11 +28,24 @@ header {
             li {
                 a {
                     text-decoration: none;
-                    color: #fff; /* White link color */
+                    color: #fff;
                     transition: color 0.3s ease;
+                    position: relative;
 
                     &:hover {
-                        color: #e74c3c; /* Hover link color (e.g., red) */
+                        color: #e74c3c;
+                    }
+
+                    .item-count {
+                        background-color: #e74c3c;
+                        color: #fff;
+                        font-size: 12px;
+                        padding: 2px 6px;
+                        border-radius: 50%;
+                        margin-bottom: 2px;
+                        position: absolute;
+                        top: -8px;
+                        left: 0;
                     }
                 }
             }

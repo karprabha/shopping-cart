@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import ShopContext from "../context/ShopContext";
 
 const Navbar = () => {
+    const { cartItems } = useContext(ShopContext);
+    const itemCount = Object.keys(cartItems).length;
+
     return (
         <nav>
             <ul>
@@ -11,7 +16,12 @@ const Navbar = () => {
                     <NavLink to={`/products`}>Products</NavLink>
                 </li>
                 <li>
-                    <NavLink to={`/cart`}>🛒 Cart</NavLink>
+                    <NavLink to={`/cart`}>
+                        🛒 Cart{" "}
+                        {itemCount > 0 && (
+                            <span className="item-count">{itemCount}</span>
+                        )}
+                    </NavLink>
                 </li>
             </ul>
         </nav>
