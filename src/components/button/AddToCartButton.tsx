@@ -24,17 +24,21 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ itemId }) => {
     };
 
     return (
-        <div>
+        <div className="add-to-cart-btn">
             {quantity === 0 ? (
-                <button type="button" onClick={handleAddToCart}>
+                <button
+                    type="button"
+                    className="add-to-cart"
+                    onClick={handleAddToCart}
+                >
                     Add to Cart
                 </button>
             ) : (
-                <div>
+                <div className="quantity-btn">
                     <button type="button" onClick={handleDecreaseQuantity}>
                         -
                     </button>
-                    <span>{quantity}</span>
+                    <span className="quantity">{quantity}</span>
                     <button type="button" onClick={handleIncreaseQuantity}>
                         +
                     </button>

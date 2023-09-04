@@ -9,7 +9,7 @@ const RemoveItemButton: React.FC<RemoveItemButtonProps> = ({ itemId }) => {
     const { updateCartItems } = useContext(ShopContext);
 
     return (
-        <div>
+        <div className="remove-item-btn">
             <button type="button" onClick={() => updateCartItems(itemId, 0)}>
                 Remove
             </button>

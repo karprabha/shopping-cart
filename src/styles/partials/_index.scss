@@ -1,12 +1,7 @@
+@use "card";
+@use "cart";
+@use "buttons";
+@use "checkout";
+@use "productDetails";
+
 @use "./header";
-@use "./cardContainer";
-@use "./card";
-@use "./skeletonCard";
-@use "./cartItem";
-@use "./cartItemContainer";
-@use "./skeletonCartItem";
-@use "./cartContainer";
-@use "./orderSummaryContainer";
-@use "./productDetails";
-@use "./cart";
-@use "./checkout";

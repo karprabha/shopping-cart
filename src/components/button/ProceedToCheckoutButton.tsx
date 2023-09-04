@@ -6,7 +6,7 @@ const ProceedToCheckoutButton = () => {
     const { clearCart } = useContext(ShopContext);
 
     return (
-        <div>
+        <div className="proceed-to-checkout-btn">
             <Link to={"/checkout"}>
                 <button type="button" onClick={() => clearCart()}>
                     Proceed to checkout
