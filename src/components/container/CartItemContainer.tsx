@@ -17,7 +17,7 @@ const CartItemContainer: React.FC<CartItemContainerProps> = ({
         <div className="cart-item-container">
             <div className="cart-info">
                 <h3>Your shopping Cart</h3>
-                <h3>{totalItemCount} Items</h3>
+                <span>{totalItemCount} Items</span>
             </div>
 
             <div className="cart-items">

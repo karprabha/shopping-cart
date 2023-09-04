@@ -1,10 +1,11 @@
 @use "card";
 @use "cart";
+@use "label";
 @use "buttons";
+@use "payment";
 @use "checkout";
 @use "productDetails";
 @use "navigation";
-@use "label";
 
 @use "./header";
 @use "./main";

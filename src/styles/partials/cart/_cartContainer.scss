@@ -3,10 +3,19 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 @media screen and (max-width: 1156px) {
     .cart-container {
         justify-content: space-around;
+        .cart-item-container {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .order-summary-container {
+            width: 100%;
+        }
     }
 }
