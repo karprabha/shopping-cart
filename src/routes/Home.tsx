@@ -1,8 +1,10 @@
+import HeroSection from "../layouts/home/HeroSection";
+
 const Home = () => {
     return (
-        <>
-            <h1>Home</h1>
-        </>
+        <div className="home-route">
+            <HeroSection />
+        </div>
     );
 };
 

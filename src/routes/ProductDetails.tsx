@@ -32,7 +32,7 @@ const ProductDetails = () => {
     );
 
     return (
-        <>
+        <div className="product-details-route">
             <div className="breadcrumb-navigation">
                 <Link to={"/"} className="breadcrumb-link">
                     Home
@@ -77,7 +77,7 @@ const ProductDetails = () => {
                 <h3>You might be interested in</h3>
                 <Slider slides={relatedItems} />
             </div>
-        </>
+        </div>
     );
 };
 
