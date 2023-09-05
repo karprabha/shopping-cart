@@ -16,7 +16,9 @@ const Slide: React.FC<SlideProps> = ({ slide }) => {
                     <BestSellerLabel rating={slide.rating} />
                     <img src={slide.image} alt={slide.title} />
                 </div>
-                <span>{trimString(slide.title, 20)}</span>
+                <span className="item-title">
+                    {trimString(slide.title, 20)}
+                </span>
                 <div className="rating-container">
                     <Rating rating={slide.rating.rate} />
                     <span>({slide.rating.count})</span>
