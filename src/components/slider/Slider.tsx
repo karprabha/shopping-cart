@@ -34,7 +34,7 @@ const Slider: React.FC<SliderProps> = ({ slides, skeletonEstimate }) => {
                 {"<"}
             </button>
 
-            {slides.length > 0
+            {slides && slides.length > 0
                 ? slides.map((slide, index) => (
                       <div
                           key={index}
