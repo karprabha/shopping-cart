@@ -19,8 +19,6 @@ const CardContainer: React.FC<CardContainerProps> = ({ categorizedItems }) => {
         setSelectedCategory(event.target.value);
     };
 
-    console.log(categorizedItems);
-
     return (
         <>
             <div className="breadcrumb-navigation">
