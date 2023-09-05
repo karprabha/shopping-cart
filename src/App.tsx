@@ -6,6 +6,7 @@ import { CartItems } from "./types/CartItems";
 import { useLocalStorage } from "./hooks/customHooks";
 import { Link } from "react-router-dom";
 import Footer from "./layouts/Footer";
+import ScrollToTop from "./utils/scrollToTop";
 
 const App = () => {
     const [cachedCartItems, setCachedCartItems] = useLocalStorage(
@@ -53,6 +54,8 @@ const App = () => {
             <footer>
                 <Footer />
             </footer>
+
+            <ScrollToTop />
         </ShopContext.Provider>
     );
 };
