@@ -45,17 +45,26 @@ const Home = () => {
             <HeroSection />
             <div className="related-items">
                 <h3>Recommended for You</h3>
-                <Slider slides={cachedCategorizedItems["all"]} />
+                <Slider
+                    slides={cachedCategorizedItems["all"]}
+                    skeletonEstimate={14}
+                />
             </div>
 
             <div className="related-items">
                 <h3>Men's Category</h3>
-                <Slider slides={cachedCategorizedItems["men's clothing"]} />
+                <Slider
+                    slides={cachedCategorizedItems["men's clothing"]}
+                    skeletonEstimate={4}
+                />
             </div>
 
             <div className="related-items">
                 <h3>Women's Category</h3>
-                <Slider slides={cachedCategorizedItems["women's clothing"]} />
+                <Slider
+                    slides={cachedCategorizedItems["women's clothing"]}
+                    skeletonEstimate={6}
+                />
             </div>
         </div>
     );
