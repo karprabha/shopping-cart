@@ -5,6 +5,7 @@ import ShopContext from "./context/ShopContext";
 import { CartItems } from "./types/CartItems";
 import { useLocalStorage } from "./hooks/customHooks";
 import { Link } from "react-router-dom";
+import Footer from "./layouts/Footer";
 
 const App = () => {
     const [cachedCartItems, setCachedCartItems] = useLocalStorage(
@@ -48,6 +49,10 @@ const App = () => {
             <main>
                 <PageContainer />
             </main>
+
+            <footer>
+                <Footer />
+            </footer>
         </ShopContext.Provider>
     );
 };

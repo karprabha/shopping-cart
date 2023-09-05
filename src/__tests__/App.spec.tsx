@@ -10,6 +10,8 @@ describe("App component", () => {
                 <App />
             </BrowserRouter>
         );
-        expect(screen.getByRole("heading").textContent).toMatch(/CraftHaven/i);
+        expect(
+            screen.getByRole("heading", { name: "CraftHaven" }).textContent
+        ).toMatch(/CraftHaven/i);
     });
 });
